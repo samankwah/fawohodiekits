@@ -150,7 +150,7 @@ const AboutInstallation = () => {
       <div className="container mx-auto px-4">
         <button
           onClick={() => navigate("/about-us")}
-          className="text-teal-500 hover:text-teal-600 flex items-center gap-2 transition-colors mb-6"
+          className="text-gray-900 hover:text-gray-600 flex items-center gap-2 transition-colors mb-6"
         >
           <span>←</span>
           <span className="text-sm font-medium">GO BACK</span>

@@ -34,7 +34,7 @@ const Hero = () => {
   }, [controls]);
 
   return (
-    <div className="w-full bg-gradient-to-br from-amber-50 to-white pt-20">
+    <div className="w-full bg-gradient-to-br from-blue-50 to-white pt-12 lg:pt-20">
       <div className="container mx-auto px-6 py-16">
         <ScrollToTopButton />
         <div className="flex flex-col lg:flex-row items-center justify-between">
@@ -47,7 +47,7 @@ const Hero = () => {
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
               Elegant Solutions for{" "}
-              <span className="text-amber-500">Modern Challenges</span>
+              <span className="text-[#0A5EB0]">Modern Challenges</span>
             </h1>
             <p className="text-gray-600 text-lg mb-8 max-w-lg">
               Fowohodie delivers intuitive experiences that blend seamlessly
@@ -56,13 +56,13 @@ const Hero = () => {
             <div className="flex flex-wrap gap-4 mb-8">
               <a
                 href="/product-catalog"
-                className="px-6 py-3 bg-amber-500 hover:bg-amber-600 text-white font-medium rounded-md transition-colors duration-200 flex items-center gap-2"
+                className="px-6 py-3 bg-[#0A5EB0] hover:bg-blue-600 text-white font-medium rounded-md transition-colors duration-200 flex items-center gap-2"
               >
                 Explore Services <ArrowRight size={16} />
               </a>
               <a
                 href="/contact"
-                className="px-6 py-3 border border-gray-300 hover:border-amber-500 hover:text-amber-500 text-gray-700 font-medium rounded-md transition-colors duration-200"
+                className="px-6 py-3 border border-gray-300 hover:border-blue-500 hover:text-blue-500 text-gray-700 font-medium rounded-md transition-colors duration-200"
               >
                 Contact Us
               </a>
@@ -86,7 +86,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="relative">
-              <div className="absolute -z-10 w-4/5 h-4/5 top-8 right-0 bg-amber-200 rounded-lg"></div>
+              <div className="absolute -z-10 w-4/5 h-4/5 top-8 right-0 bg-[#0A5EB0] rounded-lg"></div>
               <img
                 src={Image}
                 alt="Fowohodie Services"
