@@ -197,7 +197,7 @@ const ProductCatalog = () => {
                         onClick={() => setSelectedCategory(category.name)}
                         className={`w-full text-left flex justify-between items-center py-2 px-3 rounded-lg transition-colors ${
                           selectedCategory === category.name
-                            ? "bg-[#0A5EB0] text-blue-700 font-medium"
+                            ? "bg-[#0A5EB0] text-gray-700 font-medium"
                             : "text-slate-600 hover:bg-slate-50"
                         }`}
                       >

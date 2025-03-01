@@ -51,7 +51,7 @@ const AboutProduct = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section id="features" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         {/* Section header */}
         <div className="text-center mb-16 pt-6">
@@ -212,13 +212,15 @@ const AboutProduct = () => {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+                className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 justify-center"
               >
-                <div className="mb-4">{feature.icon}</div>
-                <h4 className="text-xl font-semibold text-gray-800 mb-2">
+                <div className="mb-4 flex justify-center">{feature.icon}</div>{" "}
+                <h4 className="text-xl font-semibold text-gray-800 mb-2 text-center">
                   {feature.title}
                 </h4>
-                <p className="text-gray-600">{feature.description}</p>
+                <p className="text-gray-600 text-center">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>

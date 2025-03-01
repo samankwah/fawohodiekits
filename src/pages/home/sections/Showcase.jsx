@@ -54,7 +54,10 @@ const Showcase = () => {
   }, []);
 
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-white py-20 px-6 sm:px-8 lg:px-12">
+    <section
+      id="products"
+      className="bg-gradient-to-b from-gray-50 to-white py-20 px-6 sm:px-8 lg:px-12"
+    >
       <div className="container mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-5 tracking-tight">

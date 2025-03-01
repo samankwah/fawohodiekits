@@ -125,7 +125,10 @@ const AboutInnovator = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
+    <section
+      id="about"
+      className="py-20 bg-gradient-to-b from-blue-50 to-white"
+    >
       <div className="container mx-auto px-6 pt-12">
         <div className="flex flex-col lg:flex-row gap-12 items-start">
           {/* Left column - Profile and quick info */}

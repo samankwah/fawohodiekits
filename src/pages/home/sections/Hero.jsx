@@ -34,96 +34,98 @@ const Hero = () => {
   }, [controls]);
 
   return (
-    <div className="w-full bg-gradient-to-br from-blue-50 to-white pt-12 lg:pt-20">
-      <div className="container mx-auto px-6 py-16">
-        <ScrollToTopButton />
-        <div className="flex flex-col lg:flex-row items-center justify-between">
-          {/* Left column - Text content */}
-          <motion.div
-            className="w-full lg:w-1/2 lg:pr-12 mb-10 lg:mb-0"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
-              Elegant Solutions for{" "}
-              <span className="text-[#0A5EB0]">Modern Challenges</span>
-            </h1>
-            <p className="text-gray-600 text-lg mb-8 max-w-lg">
-              Fowohodie delivers intuitive experiences that blend seamlessly
-              with your lifestyle. Simple. Powerful. Refined.
-            </p>
-            <div className="flex flex-wrap gap-4 mb-8">
-              <a
-                href="/product-catalog"
-                className="px-6 py-3 bg-[#0A5EB0] hover:bg-blue-600 text-white font-medium rounded-md transition-colors duration-200 flex items-center gap-2"
-              >
-                Explore Services <ArrowRight size={16} />
-              </a>
-              <a
-                href="/contact"
-                className="px-6 py-3 border border-gray-300 hover:border-blue-500 hover:text-blue-500 text-gray-700 font-medium rounded-md transition-colors duration-200"
-              >
-                Contact Us
-              </a>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="text-amber-500">★★★★★</div>
-              <p className="text-gray-600 text-sm">
-                <span className="font-medium">
-                  Trusted by over 500+ clients
-                </span>{" "}
-                worldwide
+    <section id="home">
+      <div className="w-full bg-gradient-to-br from-blue-50 to-white pt-12 lg:pt-20">
+        <div className="container mx-auto px-6 py-16">
+          <ScrollToTopButton />
+          <div className="flex flex-col lg:flex-row items-center justify-between">
+            {/* Left column - Text content */}
+            <motion.div
+              className="w-full lg:w-1/2 lg:pr-12 mb-10 lg:mb-0"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+                Elegant Solutions for{" "}
+                <span className="text-[#0A5EB0]">Modern Challenges</span>
+              </h1>
+              <p className="text-gray-600 text-lg mb-8 max-w-lg">
+                Fowohodie delivers intuitive experiences that blend seamlessly
+                with your lifestyle. Simple. Powerful. Refined.
               </p>
-            </div>
-          </motion.div>
+              <div className="flex flex-wrap gap-4 mb-8">
+                <a
+                  href="/product-catalog"
+                  className="px-6 py-3 bg-[#0A5EB0] hover:bg-blue-600 text-white font-medium rounded-md transition-colors duration-200 flex items-center gap-2"
+                >
+                  Explore Services <ArrowRight size={16} />
+                </a>
+                <a
+                  href="/contact"
+                  className="px-6 py-3 border border-gray-300 hover:border-blue-500 hover:text-blue-500 text-gray-700 font-medium rounded-md transition-colors duration-200"
+                >
+                  Contact Us
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="text-amber-500">★★★★★</div>
+                <p className="text-gray-600 text-sm">
+                  <span className="font-medium">
+                    Trusted by over 500+ clients
+                  </span>{" "}
+                  worldwide
+                </p>
+              </div>
+            </motion.div>
 
-          {/* Right column - Hero image */}
+            {/* Right column - Hero image */}
+            <motion.div
+              className="w-full lg:w-1/2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="relative">
+                <div className="absolute -z-10 w-4/5 h-4/5 top-8 right-0 bg-[#0A5EB0] rounded-lg"></div>
+                <img
+                  src={Image}
+                  alt="Fowohodie Services"
+                  className="relative z-10 rounded-lg shadow-md w-full h-auto object-cover"
+                />
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Updated Clients section with slider */}
           <motion.div
-            className="w-full lg:w-1/2"
+            className="mt-16 pt-6 border-t border-gray-100"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ delay: 0.4 }}
           >
-            <div className="relative">
-              <div className="absolute -z-10 w-4/5 h-4/5 top-8 right-0 bg-[#0A5EB0] rounded-lg"></div>
-              <img
-                src={Image}
-                alt="Fowohodie Services"
-                className="relative z-10 rounded-lg shadow-md w-full h-auto object-cover"
-              />
+            <p className="text-center text-gray-500 mb-4 text-sm font-medium">
+              TRUSTED BY INDUSTRY LEADERS
+            </p>
+            <div className="relative w-full overflow-hidden">
+              <motion.div
+                className="flex items-center gap-16 whitespace-nowrap"
+                animate={controls}
+              >
+                {duplicatedCompanies.map((company, index) => (
+                  <div
+                    key={`${company}-${index}`}
+                    className="text-gray-400 font-bold px-8 flex-shrink-0"
+                  >
+                    {company}
+                  </div>
+                ))}
+              </motion.div>
             </div>
           </motion.div>
         </div>
-
-        {/* Updated Clients section with slider */}
-        <motion.div
-          className="mt-16 pt-6 border-t border-gray-100"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-        >
-          <p className="text-center text-gray-500 mb-4 text-sm font-medium">
-            TRUSTED BY INDUSTRY LEADERS
-          </p>
-          <div className="relative w-full overflow-hidden">
-            <motion.div
-              className="flex items-center gap-16 whitespace-nowrap"
-              animate={controls}
-            >
-              {duplicatedCompanies.map((company, index) => (
-                <div
-                  key={`${company}-${index}`}
-                  className="text-gray-400 font-bold px-8 flex-shrink-0"
-                >
-                  {company}
-                </div>
-              ))}
-            </motion.div>
-          </div>
-        </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 
