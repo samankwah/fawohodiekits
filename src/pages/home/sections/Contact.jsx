@@ -195,19 +195,19 @@
 
 import React, { useState } from "react";
 import { Mail, MapPin, Phone, Send, MessageCircle, User } from "lucide-react";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+// import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 // import backgroundImage from "../assets/undraw_community_fv55.png";
 // import { Link } from "react-router-dom";
 
-const containerStyle = {
-  width: "100%",
-  height: "100%",
-};
+// const containerStyle = {
+//   width: "100%",
+//   height: "100%",
+// };
 
-const center = {
-  lat: 5.1817,
-  lng: -2.0273,
-};
+// const center = {
+//   lat: 5.1817,
+//   lng: -2.0273,
+// };
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -241,7 +241,7 @@ function Contact() {
           {/* Contact Form */}
           <div className="bg-white shadow-xl rounded-xl p-8">
             <h2 className="text-2xl lg:text-3xl font-serif font-bold mb-6 flex items-center">
-              <Send className="mr-4 text-[#DA0037]" size={32} />
+              <Send className="mr-4 text-[#0A5EB0]" size={32} />
               Send us a Message
             </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -300,13 +300,13 @@ function Contact() {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C70039] transition"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
                   placeholder="Your message to us..."
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full bg-[#DA0037] text-white py-3 rounded-lg hover:bg-[#C70039] transition-colors flex items-center justify-center"
+                className="w-full bg-[#0A5EB0] text-white py-3 rounded-lg hover:bg-blue-500 transition-colors flex items-center justify-center"
               >
                 <Send className="mr-2" size={20} />
                 Send Message
@@ -335,7 +335,9 @@ function Contact() {
                 <Phone className="mr-4 text-gray-800" size={32} />
                 <div>
                   <h3 className="font-semibold text-gray-800">Phone</h3>
-                  <p className="text-gray-600">(+233) 024-399-9631</p>
+                  <p className="text-gray-600">
+                    (+233) 055-320-7865 / 020-009-6078
+                  </p>
                 </div>
               </div>
 
@@ -343,9 +345,7 @@ function Contact() {
                 <Mail className="mr-4 text-gray-800" size={32} />
                 <div>
                   <h3 className="font-semibold text-gray-800">Email</h3>
-                  <p className="text-gray-600">
-                    info@fawohodieconversionkits.com
-                  </p>
+                  <p className="text-gray-600">kelvindomfeh2004@gmail.com</p>
                 </div>
               </div>
             </div>
@@ -359,50 +359,20 @@ function Contact() {
                   <br />
                   Saturday: 10:00 AM - 5:00 PM
                   <br />
-                  {/* Sunday: Closed (Worship Day) */}
                 </p>
               </div>
             </div>
 
             {/* Google Maps Placeholder */}
-            {/* <div className="mt-8 bg-gray-200 h-64 rounded-lg flex items-center justify-center">
-              <p className="text-gray-600">Location Map Placeholder</p>
-            </div> */}
+
             <div className="mt-12">
-              <h2 className="text-2xl font-semibold text-[#DA0037] mb-4 text-center">
+              <h2 className="text-2xl font-semibold text-[#0A5EB0] mb-4 text-center">
                 Find Us on the Map
               </h2>
               <div className="bg-gray-300 rounded-lg h-64">
-                {/* Google Maps Integration */}
-                {/* <LoadScript
-                  googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}
-                >
-                  <GoogleMap
-                    mapContainerStyle={containerStyle}
-                    center={center}
-                    zoom={14}
-                  >
-                    <Marker
-                      position={center}
-                      label={{
-                        text: "We are here!",
-                        color: "black",
-                        fontSize: "18px",
-                        fontWeight: "bold",
-                      }}
-                      icon={{
-                        url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
-                        scaledSize: { width: 40, height: 40 }, // Adjust icon size
-                      }}
-                    />
-                  </GoogleMap>
-                </LoadScript> */}
                 <iframe
                   className="w-full h-full rounded-xl"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44953.33969693637!2d-2.033969624990797!3d5.207347014973899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdd6fc9ef52d521%3A0xf0509e89dedf2939!2sEAGLES%20NEST%20INT.%20HOTEL!5e0!3m2!1sen!2sgh!4v1740673223308!5m2!1sen!2sgh"
-                  // width="600"
-                  // height="450"
-                  // style="border:0;"
                   allowfullscreen=""
                   loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"

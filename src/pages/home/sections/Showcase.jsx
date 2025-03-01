@@ -96,7 +96,7 @@ const Showcase = () => {
               </div>
 
               <div className="p-6 sm:p-8">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3 leading-tight hover:text-indigo-700 transition-colors">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3 leading-tight hover:text-blue-700 transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-gray-600 mb-5 text-sm leading-relaxed line-clamp-3">
@@ -110,14 +110,14 @@ const Showcase = () => {
                     className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
                       item.price === "Free"
                         ? "bg-emerald-100 text-emerald-800 hover:bg-emerald-200 hover:shadow-md"
-                        : "bg-indigo-600 text-white hover:bg-indigo-700 hover:shadow-md"
+                        : "bg-blue-600 text-white hover:bg-blue-700 hover:shadow-md"
                     }`}
                   >
                     {item.price === "Free" ? "Get Started" : "Add to Cart"}
                   </button>
                 </div>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-gray-800 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
             </div>
           ))}
         </div>

@@ -158,7 +158,7 @@ const ProductCatalog = () => {
                     <input
                       type="text"
                       placeholder="Search product..."
-                      className="w-full pl-10 pr-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                      className="w-full pl-10 pr-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                       value={searchInput}
                       onChange={(e) => setSearchInput(e.target.value)}
                     />
@@ -178,7 +178,7 @@ const ProductCatalog = () => {
                   </div>
                   <button
                     type="submit"
-                    className="px-4 py-2.5 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors flex items-center justify-center shadow-sm"
+                    className="px-4 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center shadow-sm"
                   >
                     <Search className="h-5 w-5" />
                   </button>
@@ -197,7 +197,7 @@ const ProductCatalog = () => {
                         onClick={() => setSelectedCategory(category.name)}
                         className={`w-full text-left flex justify-between items-center py-2 px-3 rounded-lg transition-colors ${
                           selectedCategory === category.name
-                            ? "bg-emerald-50 text-emerald-700 font-medium"
+                            ? "bg-[#0A5EB0] text-blue-700 font-medium"
                             : "text-slate-600 hover:bg-slate-50"
                         }`}
                       >
@@ -222,7 +222,7 @@ const ProductCatalog = () => {
                   max="6000"
                   value={priceRange}
                   onChange={(e) => setPriceRange(Number(e.target.value))}
-                  className="w-full accent-emerald-600"
+                  className="w-full accent-blue-600"
                 />
                 <div className="flex justify-between text-sm text-slate-600 mt-3">
                   <span>GH₵0</span>
@@ -245,7 +245,7 @@ const ProductCatalog = () => {
                     onClick={() => setViewMode("grid")}
                     className={`p-2 rounded-lg transition-colors ${
                       viewMode === "grid"
-                        ? "bg-white text-emerald-600 shadow-sm"
+                        ? "bg-white text-[#0A5EB0] shadow-sm"
                         : "text-slate-400 hover:text-slate-600"
                     }`}
                   >
@@ -255,7 +255,7 @@ const ProductCatalog = () => {
                     onClick={() => setViewMode("list")}
                     className={`p-2 rounded-lg transition-colors ${
                       viewMode === "list"
-                        ? "bg-white text-emerald-600 shadow-sm"
+                        ? "bg-white text-[#0A5EB0] shadow-sm"
                         : "text-slate-400 hover:text-slate-600"
                     }`}
                   >
@@ -265,7 +265,7 @@ const ProductCatalog = () => {
                 <select
                   value={sortType}
                   onChange={(e) => setSortType(e.target.value)}
-                  className="p-2 border border-slate-200 rounded-lg bg-white focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  className="p-2 border border-slate-200 rounded-lg bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   <option value="priceAsc">Price (Lowest)</option>
                   <option value="priceDesc">Price (Highest)</option>
@@ -304,12 +304,12 @@ const ProductCatalog = () => {
                       {product.description}
                     </p>
                     <div className="flex justify-between items-center">
-                      <span className="text-xl font-bold text-emerald-600">
+                      <span className="text-xl font-bold text-[#0A5EB0]">
                         {product.price === "Free"
                           ? "Free"
                           : `GH₵${Number(product.price).toLocaleString()}`}
                       </span>
-                      <button className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-all shadow-sm hover:shadow-md">
+                      <button className="px-4 py-2 bg-[#0A5EB0] text-white rounded-lg hover:bg-blue-700 transition-all shadow-sm hover:shadow-md">
                         {product.price === "Free"
                           ? "Get Started"
                           : "Add to Cart"}

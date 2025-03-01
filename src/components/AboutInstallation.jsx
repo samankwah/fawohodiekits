@@ -184,7 +184,7 @@ const AboutInstallation = () => {
               className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
             >
               <div className="flex items-center mb-4">
-                <div className="text-amber-500 mr-3">{step.icon}</div>
+                <div className="text-[#0A5EB0] mr-3">{step.icon}</div>
                 <h3 className="text-xl font-semibold text-gray-900">
                   {step.title}
                 </h3>
@@ -221,16 +221,16 @@ const AboutInstallation = () => {
               <div
                 key={plan.title}
                 className={`bg-white rounded-lg shadow-md p-6 relative ${
-                  plan.recommended ? "border-2 border-amber-500" : ""
+                  plan.recommended ? "border-2 border-blue-500" : ""
                 }`}
               >
                 {plan.recommended && (
-                  <div className="absolute top-0 right-0 bg-amber-500 text-white px-4 py-1 rounded-bl-lg rounded-tr-lg text-sm">
+                  <div className="absolute top-0 right-0 bg-blue-500 text-white px-4 py-1 rounded-bl-lg rounded-tr-lg text-sm">
                     Recommended
                   </div>
                 )}
                 <h4 className="text-xl font-semibold mb-4">{plan.title}</h4>
-                <p className="text-3xl font-bold text-amber-500 mb-6">
+                <p className="text-3xl font-bold text-[#0A5EB0] mb-6">
                   {plan.price}
                 </p>
                 <ul className="space-y-3 mb-6">
@@ -241,7 +241,7 @@ const AboutInstallation = () => {
                     </li>
                   ))}
                 </ul>
-                <button className="w-full py-2 px-4 bg-amber-500 text-white rounded-md hover:bg-amber-600 transition-colors">
+                <button className="w-full py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors">
                   Choose Plan
                 </button>
               </div>
@@ -265,7 +265,7 @@ const AboutInstallation = () => {
                 key={testimonial.name}
                 className="bg-white rounded-lg shadow-md p-6"
               >
-                <div className="flex text-amber-500 mb-4">
+                <div className="flex text-[#0A5EB0] mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-current" />
                   ))}
@@ -326,7 +326,7 @@ const AboutInstallation = () => {
           <p className="text-lg text-gray-600 mb-6">
             Ready to get started? Schedule your installation today.
           </p>
-          <button className="px-8 py-3 bg-amber-500 hover:bg-amber-600 text-white font-medium rounded-md transition-colors duration-200">
+          <button className="px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-md transition-colors duration-200">
             Schedule Installation
           </button>
         </motion.div>
