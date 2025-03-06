@@ -117,9 +117,10 @@ const AboutInnovator = () => {
       },
       {
         platform: "Email",
-        url: "/kelvindomfeh2004@gmail.com",
+        url: "mailto:kelvindomfeh2004@gmail.com?subject=Hello Kelvin&body=I would like to contact you.",
         icon: <Mail className="w-5 h-5" />,
       },
+
       { platform: "GitHub", url: "#", icon: <FaGithub className="w-5 h-5" /> },
     ],
   };

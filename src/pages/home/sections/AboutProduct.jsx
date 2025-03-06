@@ -218,7 +218,7 @@ const AboutProduct = () => {
                 <h4 className="text-xl font-semibold text-gray-800 mb-2 text-center">
                   {feature.title}
                 </h4>
-                <p className="text-gray-600 text-center">
+                <p className="text-gray-600 text-start">
                   {feature.description}
                 </p>
               </div>

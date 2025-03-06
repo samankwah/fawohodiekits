@@ -1,251 +1,14 @@
-// import { useState, useEffect, useRef } from "react";
-// import { Menu, X, Search, ShoppingCart, User, Sun, Moon } from "lucide-react";
-// // import Logo from "../assets/fawohodie-logo1.png";
-// import { Link, useLocation } from "react-router-dom";
-// import LogoDark from "../assets/fawohodie-logo1.png"; // Original dark logo
-// import LogoWhite from "../assets/fawohodie-logo-white.png";
-
-// const Navbar = () => {
-//   const [isOpen, setIsOpen] = useState(false);
-//   const [scrolled, setScrolled] = useState(false);
-//   const [darkMode, setDarkMode] = useState(false);
-//   const location = useLocation();
-//   const mobileMenuRef = useRef(null);
-//   const menuButtonRef = useRef(null);
-
-//   // Handle scroll effect for navbar
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       if (window.scrollY > 20) {
-//         setScrolled(true);
-//       } else {
-//         setScrolled(false);
-//       }
-//     };
-
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-
-//   // Handle click outside to close mobile menu
-//   useEffect(() => {
-//     const handleClickOutside = (event) => {
-//       if (
-//         isOpen &&
-//         mobileMenuRef.current &&
-//         !mobileMenuRef.current.contains(event.target) &&
-//         !menuButtonRef.current.contains(event.target)
-//       ) {
-//         setIsOpen(false);
-//       }
-//     };
-
-//     document.addEventListener("mousedown", handleClickOutside);
-//     return () => document.removeEventListener("mousedown", handleClickOutside);
-//   }, [isOpen]);
-
-//   // Toggle dark mode
-//   const toggleDarkMode = () => {
-//     setDarkMode(!darkMode);
-//   };
-
-//   // Navbar menu items with section links
-//   const navLinks = [
-//     { name: "Home", link: "/" },
-//     { name: "About", link: "/about-innovator" },
-//     { name: "Products", link: "/products" },
-//     { name: "Features", link: "/about-us" },
-//     { name: "Contact", link: "/contact" },
-//   ];
-
-//   // Check if link is active
-//   const isActive = (path) => {
-//     return location.pathname === path;
-//   };
-
-//   return (
-//     <nav
-//       className={`p-4 flex justify-between items-center fixed w-full top-0 z-50 transition-all duration-300 ${
-//         scrolled
-//           ? "bg-amber-300 shadow-lg"
-//           : "bg-amber-300 bg-opacity-90 backdrop-blur-sm"
-//       } ${darkMode ? "bg-gray-900 text-white" : ""}`}
-//     >
-//       <div className="container mx-auto flex justify-between items-center">
-//         {/* Logo with Link */}
-//         <Link to="/" className="flex items-center space-x-6">
-//           <img
-//             src={darkMode ? LogoWhite : LogoDark}
-//             alt="Fowohodie Logo"
-//             className="w-40 h-10"
-//           />
-//         </Link>
-
-//         {/* Desktop Menu */}
-//         <ul className="hidden md:flex space-x-6">
-//           {navLinks.map((item) => (
-//             <li key={item.name}>
-//               <Link
-//                 to={item.link}
-//                 className={`transition-colors relative ${
-//                   darkMode ? "text-white" : "text-gray-900"
-//                 } ${
-//                   isActive(item.link)
-//                     ? "font-semibold after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-0.5 after:bg-amber-600"
-//                     : "hover:text-amber-600"
-//                 }`}
-//               >
-//                 {item.name}
-//               </Link>
-//             </li>
-//           ))}
-//         </ul>
-
-//         {/* Desktop Action Buttons */}
-//         <div className="hidden md:flex items-center space-x-4">
-//           <button
-//             className="p-1 rounded-full hover:bg-opacity-20 hover:bg-gray-700"
-//             aria-label="Search"
-//           >
-//             <Search
-//               size={20}
-//               className={darkMode ? "text-white" : "text-gray-800"}
-//             />
-//           </button>
-//           <button
-//             className="p-1 rounded-full hover:bg-opacity-20 hover:bg-gray-700 relative"
-//             aria-label="Cart"
-//           >
-//             <ShoppingCart
-//               size={20}
-//               className={darkMode ? "text-white" : "text-gray-800"}
-//             />
-//             <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
-//               3
-//             </span>
-//           </button>
-//           <button
-//             className="p-1 rounded-full hover:bg-opacity-20 hover:bg-gray-700"
-//             aria-label="Account"
-//           >
-//             <User
-//               size={20}
-//               className={darkMode ? "text-white" : "text-gray-800"}
-//             />
-//           </button>
-//           <button
-//             className="p-1 rounded-full hover:bg-opacity-20 hover:bg-gray-700"
-//             onClick={toggleDarkMode}
-//             aria-label={
-//               darkMode ? "Switch to light mode" : "Switch to dark mode"
-//             }
-//           >
-//             {darkMode ? (
-//               <Sun size={20} className="text-white" />
-//             ) : (
-//               <Moon size={20} className="text-gray-800" />
-//             )}
-//           </button>
-//         </div>
-
-//         {/* Mobile Menu Button */}
-//         <button
-//           ref={menuButtonRef}
-//           className={`md:hidden p-2 rounded-lg ${
-//             darkMode ? "bg-amber-500 text-gray-900" : "bg-gray-800 text-white"
-//           }`}
-//           onClick={() => setIsOpen(!isOpen)}
-//           aria-expanded={isOpen}
-//           aria-label="Toggle navigation menu"
-//         >
-//           {isOpen ? <X size={24} /> : <Menu size={24} />}
-//         </button>
-//       </div>
-
-//       {/* Mobile Menu */}
-//       {isOpen && (
-//         <div
-//           ref={mobileMenuRef}
-//           className={`absolute top-16 left-0 w-full ${
-//             darkMode ? "bg-gray-800" : "bg-amber-300"
-//           } p-4 shadow-lg md:hidden`}
-//         >
-//           <ul className="flex flex-col space-y-4 font-medium">
-//             {navLinks.map((item) => (
-//               <li key={item.name}>
-//                 <Link
-//                   to={item.link}
-//                   className={`block transition-colors relative ${
-//                     darkMode ? "text-white" : "text-gray-900"
-//                   } ${
-//                     isActive(item.link)
-//                       ? "font-semibold text-amber-600"
-//                       : "hover:text-amber-600"
-//                   }`}
-//                   onClick={() => setIsOpen(false)}
-//                 >
-//                   {item.name}
-//                 </Link>
-//               </li>
-//             ))}
-//           </ul>
-//           <div className="flex items-center space-x-4 mt-6 pt-4 border-t border-gray-700">
-//             <button
-//               className="p-1 rounded-full hover:bg-opacity-20 hover:bg-gray-700"
-//               aria-label="Search"
-//             >
-//               <Search
-//                 size={20}
-//                 className={darkMode ? "text-white" : "text-gray-800"}
-//               />
-//             </button>
-//             <button
-//               className="p-1 rounded-full hover:bg-opacity-20 hover:bg-gray-700 relative"
-//               aria-label="Cart"
-//             >
-//               <ShoppingCart
-//                 size={20}
-//                 className={darkMode ? "text-white" : "text-gray-800"}
-//               />
-//               <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
-//                 3
-//               </span>
-//             </button>
-//             <button
-//               className="p-1 rounded-full hover:bg-opacity-20 hover:bg-gray-700"
-//               aria-label="Account"
-//             >
-//               <User
-//                 size={20}
-//                 className={darkMode ? "text-white" : "text-gray-800"}
-//               />
-//             </button>
-//             <button
-//               className="p-1 rounded-full hover:bg-opacity-20 hover:bg-gray-700"
-//               onClick={toggleDarkMode}
-//               aria-label={
-//                 darkMode ? "Switch to light mode" : "Switch to dark mode"
-//               }
-//             >
-//               {darkMode ? (
-//                 <Sun size={20} className="text-white" />
-//               ) : (
-//                 <Moon size={20} className="text-gray-800" />
-//               )}
-//             </button>
-//           </div>
-//         </div>
-//       )}
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
-
 import { useState, useEffect, useRef } from "react";
-import { Menu, X } from "lucide-react";
+import {
+  Menu,
+  X,
+  ShoppingCart,
+  Facebook,
+  Twitter,
+  Instagram,
+} from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import LogoWhite from "../assets/fawohodie-logo-white.png";
+import LogoWhite from "../assets/techworks.jpg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -254,21 +17,12 @@ const Navbar = () => {
   const mobileMenuRef = useRef(null);
   const menuButtonRef = useRef(null);
 
-  // Handle scroll effect for navbar
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Handle click outside to close mobile menu
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -280,12 +34,10 @@ const Navbar = () => {
         setIsOpen(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isOpen]);
 
-  // Navbar menu items with section links
   const navLinks = [
     { name: "Home", link: "/" },
     { name: "About", link: "/about-innovator" },
@@ -294,10 +46,7 @@ const Navbar = () => {
     { name: "Contact", link: "/contact" },
   ];
 
-  // Check if link is active
-  const isActive = (path) => {
-    return location.pathname === path;
-  };
+  const isActive = (path) => location.pathname === path;
 
   return (
     <nav
@@ -308,28 +57,41 @@ const Navbar = () => {
       } text-white`}
     >
       <div className="container mx-auto flex justify-between items-center">
-        {/* Logo with Link */}
+        {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src={LogoWhite} alt="Fowohodie Logo" className="w-40 h-10" />
+          <img src={LogoWhite} alt="Fowohodie Logo" className="w-30 h-10" />
         </Link>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-8">
-          {navLinks.map((item) => (
-            <li key={item.name}>
-              <Link
-                to={item.link}
-                className={`transition-colors relative text-white text-base ${
-                  isActive(item.link)
-                    ? "font-semibold text-blue-600 after:content-[''] after:absolute after:left-0 after:bottom-[-8px] after:w-full after:h-1 after:bg-amber-400 after:rounded-full"
-                    : "hover:text-blue-600"
-                }`}
-              >
-                {item.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {/* Centered Desktop Menu */}
+        <div className="hidden md:flex flex-1 justify-center">
+          <ul className="flex space-x-6">
+            {navLinks.map((item) => (
+              <li key={item.name}>
+                <Link
+                  to={item.link}
+                  className={`relative text-white text-base transition-colors ${
+                    isActive(item.link)
+                      ? "font-semibold text-blue-600 after:content-[''] after:absolute after:left-0 after:bottom-[-8px] after:w-full after:h-1 after:bg-[#0A5EB0] after:rounded-full"
+                      : "hover:text-blue-600"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Shop Now Button with Paystack Storefront */}
+        <a
+          href="https://paystack.shop/techworks-gh"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden md:flex bg-[#0A5EB0] hover:bg-blue-700 text-white font-medium px-5 py-2.5 rounded-lg items-center gap-2 transition-all duration-300 hover:shadow-md"
+        >
+          <ShoppingCart size={18} />
+          Shop Now
+        </a>
 
         {/* Mobile Menu Button */}
         <button
@@ -349,7 +111,7 @@ const Navbar = () => {
           ref={mobileMenuRef}
           className="absolute top-16 left-0 w-full bg-gray-800 p-4 shadow-lg md:hidden"
         >
-          <ul className="flex flex-col space-y-4 font-medium">
+          <ul className="flex flex-col space-y-4 font-medium items-start">
             {navLinks.map((item) => (
               <li key={item.name}>
                 <Link
@@ -366,6 +128,45 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
+
+          {/* Shop Now Button (Mobile) */}
+          <a
+            href="https://paystack.shop/techworks-gh"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block mt-4 bg-[#0A5EB0] hover:bg-[#0A5EB0] text-white font-medium px-5 py-3 rounded-lg flex justify-center items-center gap-2 transition-all duration-300 hover:shadow-md"
+          >
+            <ShoppingCart size={20} />
+            Shop Now
+          </a>
+
+          {/* Social Media Icons */}
+          <div className="flex justify-center space-x-6 mt-6">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              <Facebook size={24} />
+            </a>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              <Twitter size={24} />
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              <Instagram size={24} />
+            </a>
+          </div>
         </div>
       )}
     </nav>
