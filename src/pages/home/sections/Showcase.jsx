@@ -112,9 +112,9 @@ const Showcase = () => {
     });
   };
 
-  const setActiveDot = (index) => {
-    setActiveIndex(index);
-  };
+  // const setActiveDot = (index) => {
+  //   setActiveIndex(index);
+  // };
 
   // Function to handle redirect to Paystack
   const handlePaystackRedirect = (paystackLink) => {
@@ -145,7 +145,7 @@ const Showcase = () => {
         </div>
 
         {/* Mobile indicator dots - changed to blue */}
-        <div className="flex justify-center space-x-2 mb-8 lg:hidden">
+        {/* <div className="flex justify-center space-x-2 mb-8 lg:hidden">
           {showcaseItems.map((_, index) => (
             <button
               key={`dot-${index}`}
@@ -158,7 +158,7 @@ const Showcase = () => {
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
-        </div>
+        </div> */}
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
           {showcaseItems.map((item, index) => (

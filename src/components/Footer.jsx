@@ -3,14 +3,19 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-gray-300">
+    <footer className="bg-[#143D60] text-gray-300">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Fowohodie</h3>
+            <h3 className="text-white text-lg font-semibold mb-4">TECHWORKS</h3>
             <p className="mb-4 text-sm">
-              Empowering individuals with disabilities through innovative
-              mobility solutions.
+              Tech Works is an innovative team dedicated to enhancing mobility
+              solutions. Our flagship product is a conversion kit that
+              transforms manual wheelchairs into electric-powered ones,
+              providing users with increased independence and ease of movement.
+              Our mission is to leverage technology to improve the quality of
+              life for individuals with mobility challenges, ensuring
+              affordability and accessibility in all our solutions.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white">
@@ -156,7 +161,7 @@ const Footer = () => {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                <span>123 Innovation Street, Accra, Ghana</span>
+                <span>Tarkwa-Nsuaem, Western Region, Ghana</span>
               </li>
               <li className="flex items-start">
                 <svg
@@ -173,7 +178,7 @@ const Footer = () => {
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
-                <span>info@fowohodie.com</span>
+                <span>kelvindomfeh2004@gmail.com</span>
               </li>
               <li className="flex items-start">
                 <svg
@@ -190,7 +195,7 @@ const Footer = () => {
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                   />
                 </svg>
-                <span>+233 123 456 7890</span>
+                <span>+233 055 320 7865</span>
               </li>
             </ul>
           </div>
