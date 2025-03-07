@@ -52,7 +52,7 @@ const Navbar = () => {
     <nav
       className={`p-4 flex justify-between items-center fixed w-full top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-gray-900 shadow-lg"
+          ? "bg-[#2c3e50] shadow-lg"
           : "bg-gray-900 bg-opacity-90 backdrop-blur-sm"
       } text-white`}
     >
@@ -87,7 +87,7 @@ const Navbar = () => {
           href="https://paystack.shop/techworks-gh"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:flex bg-[#0A5EB0] hover:bg-blue-700 text-white font-medium px-5 py-2.5 rounded-lg items-center gap-2 transition-all duration-300 hover:shadow-md"
+          className="hidden md:flex bg-[#0A5EB0] hover:bg-blue-800 text-white font-medium px-5 py-2.5 rounded-lg items-center gap-2 transition-all duration-300 hover:shadow-md"
         >
           <ShoppingCart size={18} />
           Shop Now
